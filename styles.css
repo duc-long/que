@@ -1,0 +1,59 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Mặc định xếp dọc */
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.box {
+    width: 90vw; /* Chiều rộng mặc định (Mobile) */
+    margin: 10px 0;
+    text-align: center;
+}
+
+.box img {
+    width: 100%; /* Hình ảnh co giãn theo div */
+    height: auto;
+    max-height: 50vh;
+    border-radius: 10px;
+}
+
+/* Tablet View (Từ 772px trở lên) */
+@media screen and (min-width: 772px) {
+    .container {
+        flex-direction: row; /* Xếp ngang */
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .box {
+        width: 45vw; /* 45% chiều rộng viewport */
+    }
+
+    .box img {
+        max-height: 30vh; /* 30% chiều cao viewport */
+    }
+}
+
+/* Large Screen View (Từ 998px trở lên) */
+@media screen and (min-width: 998px) {
+    .box {
+        width: 30vw; /* 30% chiều rộng viewport */
+    }
+}
